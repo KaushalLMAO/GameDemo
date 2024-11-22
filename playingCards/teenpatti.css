@@ -1,0 +1,201 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+body, html {
+    overflow: hidden; /* Prevent scrolling */
+    height: 100vh;
+}
+
+#intro {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Navigation Styling */
+#navmain {
+    display: flex;
+    justify-content: space-around;
+    height: 50px;
+    width: 100%;
+    background-color: rgb(11, 110, 79);
+    flex-wrap: wrap;
+}
+
+#navmain li {
+    color: #C2948A;
+    padding: 8px;
+    font-size: 18px;
+    list-style-type: none;
+    transition: all 0.3s;
+}
+
+
+
+
+
+/* Main Section Styling */
+.main {
+    background-color: rgb(11, 110, 79);
+    width: 100%;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+#btnmain, #btnmains {
+    height: 40px;
+    background-color: #F6F0ED;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    padding: 4px;
+}
+
+#btnmain {
+    width: 70px;
+    margin: 5px;
+}
+
+#btnmains {
+    width: 90px;
+    margin: 5px;
+}
+
+
+
+/* Game Section Styling */
+.maingame {
+    background-color: rgb(11, 110, 79);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 50px); /* Adjust height to fit below nav */
+    padding: 5px;
+}
+
+.gamebody {
+    background-color: #F6F0ED;
+    border-radius: 8px;
+    padding: 10px;
+    width: 85%;
+    height: 90%; /* Limit height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.buttons {
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+}
+
+#shufule, #reveal, #gameagain, #reset {
+    height: 35px;
+    width: 80px;
+    background-color: #C2948A;
+    border: none;
+    border-radius: 12px;
+    font-size: 12px;
+    margin: 3px;
+}
+
+/* Responsive Styles for Mobile (Landscape and Portrait) */
+@media (max-width: 640px) {
+    #navmain {
+        flex-direction: column;
+        height: auto;
+        padding: 5px;
+    }
+
+    #navmain li {
+        font-size: 16px;
+        padding: 5px;
+    }
+
+    .gamebody {
+        width: 95%;
+        height: 85%; /* Ensure it doesn't go offscreen */
+        padding: 8px;
+    }
+
+    #cards, #botcards {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .buttons button {
+        font-size: 10px;
+        width: 70px;
+        height: 30px;
+    }
+
+    #shufule, #reveal, #gameagain, #reset {
+        font-size: 10px;
+        width: 70px;
+        height: 30px;
+    }
+
+    #result {
+        font-size: 12px;
+        text-align: center;
+    }
+}
+
+/* Additional Adjustments for Very Small Portrait Screens */
+@media (max-width: 480px) {
+    #navmain {
+        flex-direction: column;
+        padding: 5px;
+        
+    }
+
+    #navmain li {
+        font-size: 14px;
+        padding: 4px;
+    }
+
+    .gamebody {
+        width: 100%;
+        height: 85%; /* Adjust for full view */
+        padding: 5px;
+    }
+
+    .buttons button {
+        font-size: 10px;
+        width: 60px;
+        height: 25px;
+    }
+
+    #shufule, #reveal, #gameagain, #reset {
+        font-size: 10px;
+        width: 60px;
+        height: 25px;
+    }
+
+    #result {
+        font-size: 12px;
+        text-align: center;
+    }
+}
+#body{
+    background-color: rgb(11, 110, 79) ;
+}
