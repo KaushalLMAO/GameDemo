@@ -67,3 +67,12 @@ body {
   font-weight: lighter;
   border-radius: 20px;
 }
+#bet_amount {
+  margin-top: 25px;
+  border-radius: 15px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
