@@ -53,7 +53,6 @@ ads.addEventListener("click", () => {
     header.appendChild(skipad);
 
     let adTimeout = setTimeout(() => {
-      // Ad finishes automatically after 47 seconds
       iframe.remove();
       cash_value += 500;
       cash.textContent = `Cash : $${cash_value}`;
@@ -62,7 +61,7 @@ ads.addEventListener("click", () => {
 
       // Ensure skip button is cleaned up
       skipad.remove();
-    }, 45500);
+    }, 45000);
 
     // Event listener for skipping the ad manually
     skipad.addEventListener("click", () => {
