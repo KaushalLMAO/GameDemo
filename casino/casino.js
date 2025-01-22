@@ -48,12 +48,33 @@ ads.addEventListener("click", () => {
   header.appendChild(iframe);
 
   setTimeout(() => {
-    iframe.remove();
-    cash_value += 50;
-    cash.textContent = `Cash : $${cash_value}`;
-    remark2.textContent = "Remarks : You got $50";
-    isAdPlaying = false;
-  }, 47000);
+    let skipad = document.createElement("button");
+    skipad.textContent = "Skip Ad";
+    header.appendChild(skipad);
+
+    let adTimeout = setTimeout(() => {
+      // Ad finishes automatically after 47 seconds
+      iframe.remove();
+      cash_value += 500;
+      cash.textContent = `Cash : $${cash_value}`;
+      remark2.textContent = "Remarks : You got $500";
+      isAdPlaying = false;
+
+      // Ensure skip button is cleaned up
+      skipad.remove();
+    }, 45500);
+
+    // Event listener for skipping the ad manually
+    skipad.addEventListener("click", () => {
+      clearTimeout(adTimeout); // Stop the automatic reward
+      iframe.remove();
+      skipad.remove();
+      cash_value += 50; // Reduced reward for skipping
+      cash.textContent = `Cash : $${cash_value}`;
+      remark2.textContent = "Remarks : You got $50";
+      isAdPlaying = false;
+    });
+  }, 10000);
 });
 
 // game logic
@@ -73,7 +94,7 @@ spinbtn.addEventListener("click", () => {
   }
 
   remarks.textContent = "Remarks :    ";
-
+  remark2.textContent = "Remarks :    ";
   if (cash_value !== 0) {
     let random1 = Math.floor(Math.random() * symbols.length);
     let random2 = Math.floor(Math.random() * symbols.length);
