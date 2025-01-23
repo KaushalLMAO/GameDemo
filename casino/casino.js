@@ -22,6 +22,8 @@ const symbols = [
   "🔥",
   "🎁",
   "🎂",
+  "🐱‍🏍",
+  "🤑",
 ];
 let spinbtn = document.getElementById("spin");
 
