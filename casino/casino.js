@@ -11,6 +11,7 @@ let ads = document.querySelector("#ads");
 let remarks = document.querySelector("#remarks");
 let remark2 = document.querySelector("#remark2");
 cash.textContent = `Cash : $${cash_value}`;
+
 const symbols = [
   "👽",
   "🐱‍🐉",
@@ -29,7 +30,7 @@ let spinbtn = document.getElementById("spin");
 
 // Flag to prevent game logic during ad
 let isAdPlaying = false;
-
+localStorage.setItem("cash", cash_value);
 // more money
 ads.addEventListener("click", () => {
   if (isAdPlaying) return; // Do nothing if ad is already playing
@@ -57,6 +58,7 @@ ads.addEventListener("click", () => {
     let adTimeout = setTimeout(() => {
       iframe.remove();
       cash_value += 500;
+      localStorage.setItem("cash", cash_value);
       cash.textContent = `Cash : $${cash_value}`;
       remark2.textContent = "Remarks : You got $500";
       isAdPlaying = false;
@@ -71,6 +73,7 @@ ads.addEventListener("click", () => {
       iframe.remove();
       skipad.remove();
       cash_value += 50; // Reduced reward for skipping
+      localStorage.setItem("cash", cash_value);
       cash.textContent = `Cash : $${cash_value}`;
       remark2.textContent = "Remarks : You got $50";
       isAdPlaying = false;
@@ -121,6 +124,7 @@ spinbtn.addEventListener("click", () => {
       ) {
         remarks.textContent = "Remarks : You lost!, everything is different";
         cash_value -= bet_cash;
+        localStorage.setItem("cash", cash_value);
         cash.textContent = `Cash : $${cash_value}`;
         if (cash_value <= 0) {
           remark2.textContent = "You Have no cash remaining!";
@@ -131,7 +135,8 @@ spinbtn.addEventListener("click", () => {
       } else if (sec1_value === sec2_value && sec2_value === sec3_value) {
         remarks.textContent = "Remarks : BINGO";
         cash_value += 10 * bet_cash;
-        cash.textContent = `Cash : $${cash_value}`;
+        localStorage.setItem("cash", cash_value);
+        cash.textContent = `Cash : ${cash_value}`;
       } else if (
         sec1_value === sec2_value ||
         sec2_value === sec3_value ||
@@ -139,6 +144,7 @@ spinbtn.addEventListener("click", () => {
       ) {
         remarks.textContent = "Remarks : Double!";
         cash_value += 3 * bet_cash;
+        localStorage.setItem("cash", cash_value);
         cash.textContent = `Cash : $${cash_value}`;
       }
     }, 1000);
